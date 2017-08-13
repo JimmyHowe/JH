@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace JH
 {
-    internal class CustomApplicationContext : ApplicationContext
+    internal class TrayApplicationContext : ApplicationContext
     {
         public NotifyIcon notifyIcon;
 
@@ -16,7 +16,7 @@ namespace JH
 
         private TrayManager trayManager;
 
-        public CustomApplicationContext()
+        public TrayApplicationContext()
         {
             InitializeContext();
         }
