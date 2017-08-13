@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpeakToMe;
+using System;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
@@ -15,6 +16,8 @@ namespace JH
         public Thread workerThread;
 
         private TrayManager trayManager;
+
+        public Narrator narrator = new Narrator();
 
         /// <summary>
         /// Constructs the TrayApplicationInstance instance.
