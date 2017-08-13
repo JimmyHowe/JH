@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
+using Tocsin;
 
 namespace JH
 {
@@ -19,12 +20,16 @@ namespace JH
 
         public Narrator narrator = new Narrator();
 
+        public PingPong pingPong = new PingPong();
+
         /// <summary>
         /// Constructs the TrayApplicationInstance instance.
         /// </summary>
         public TrayApplicationContext()
         {
             InitializeContext();
+
+            // pinger.Ping("http://jimmyhowe.com");            
         }
 
         /// <summary>
@@ -49,8 +54,16 @@ namespace JH
             {
                 while (true)
                 {
-                    // Sleep for 20 Seconds
-                    Thread.Sleep(20000);
+                    bool jimmyhowe = pingPong.Ping("http://jimmyhowe.com");
+                    bool greensavenue = pingPong.Ping("http://greensavenue.co.uk");
+
+                    if ( ! (jimmyhowe || greensavenue) )
+                    {
+                        narrator.saySomething("One of your sites is down.");
+                    }
+
+                    // Sleep for 2 Seconds
+                    Thread.Sleep(2000);
                 }
             }
             catch (ThreadAbortException)

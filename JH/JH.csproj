@@ -103,6 +103,10 @@
       <Project>{8e309977-87b5-447d-a24f-d93890d40e93}</Project>
       <Name>SpeakToMe</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tocsin\Tocsin.csproj">
+      <Project>{3b5d5d1a-db49-484c-ae72-ccb2ea0dc875}</Project>
+      <Name>Tocsin</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

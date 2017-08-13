@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JH", "JH\JH.csproj", "{B955
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeakToMe", "SpeakToMe\SpeakToMe.csproj", "{8E309977-87B5-447D-A24F-D93890D40E93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tocsin", "Tocsin\Tocsin.csproj", "{3B5D5D1A-DB49-484C-AE72-CCB2EA0DC875}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8E309977-87B5-447D-A24F-D93890D40E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E309977-87B5-447D-A24F-D93890D40E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E309977-87B5-447D-A24F-D93890D40E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B5D5D1A-DB49-484C-AE72-CCB2EA0DC875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B5D5D1A-DB49-484C-AE72-CCB2EA0DC875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B5D5D1A-DB49-484C-AE72-CCB2EA0DC875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B5D5D1A-DB49-484C-AE72-CCB2EA0DC875}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
