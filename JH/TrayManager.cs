@@ -73,7 +73,25 @@ namespace JH
             context.notifyIcon.Icon = activeIcon;
             context.notifyIcon.Visible = true;
             context.notifyIcon.ContextMenu = getContextMenu();
-            context.notifyIcon.Click += NotifyIcon_Click;
+            context.notifyIcon.MouseClick += NotifyIcon_MouseClick;
+        }
+
+        /// <summary>
+        /// Fires when the notify icon is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                if (context.mainForm == null || context.mainForm.IsDisposed)
+                {
+                    context.mainForm = new MainForm();
+                }
+
+                context.mainForm.Show();
+            }
         }
 
         /// <summary>
@@ -99,21 +117,6 @@ namespace JH
         #endregion
 
         #region Events
-
-        /// <summary>
-        /// Fires when the notify icon is clicked
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void NotifyIcon_Click(object sender, EventArgs e)
-        {
-            if (context.mainForm == null || context.mainForm.IsDisposed)
-            {
-                context.mainForm = new MainForm();
-            }
-
-            context.mainForm.Show();
-        }
 
         /// <summary>
         /// Fires when the about menu item is clicked.
