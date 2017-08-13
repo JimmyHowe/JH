@@ -57,13 +57,17 @@ namespace JH
                     bool jimmyhowe = pingPong.Ping("http://jimmyhowe.com");
                     bool greensavenue = pingPong.Ping("http://greensavenue.co.uk");
 
-                    if ( ! (jimmyhowe || greensavenue) )
+                    if (  (jimmyhowe || greensavenue) )
                     {
-                        narrator.saySomething("One of your sites is down.");
+                        trayManager.showErrorIcon();
+                        narrator.saySomething("One of your sites is down!");
+                    } else
+                    {
+                        trayManager.showActiveIcon();
                     }
 
-                    // Sleep for 2 Seconds
-                    Thread.Sleep(2000);
+                    // Sleep for 20 Seconds
+                    Thread.Sleep(20000);
                 }
             }
             catch (ThreadAbortException)
