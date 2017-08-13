@@ -57,7 +57,7 @@ namespace JH
                     bool jimmyhowe = pingPong.Ping("http://jimmyhowe.com");
                     bool greensavenue = pingPong.Ping("http://greensavenue.co.uk");
 
-                    if (  (jimmyhowe || greensavenue) )
+                    if ( ! (jimmyhowe || greensavenue) )
                     {
                         trayManager.showErrorIcon();
                         narrator.saySomething("One of your sites is down!");
