@@ -107,7 +107,7 @@ namespace JH
         /// <param name="e"></param>
         private void NotifyIcon_Click(object sender, EventArgs e)
         {
-            if (context.mainForm == null)
+            if (context.mainForm == null || context.mainForm.IsDisposed)
             {
                 context.mainForm = new MainForm();
             }
@@ -122,7 +122,7 @@ namespace JH
         /// <param name="e"></param>
         private void AboutMenuItem_Click(object sender, EventArgs e)
         {
-            if( context.aboutForm == null)
+            if( context.aboutForm == null || context.aboutForm.IsDisposed)
             {
                 context.aboutForm = new AboutForm();
             }
