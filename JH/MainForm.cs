@@ -18,6 +18,8 @@ namespace JH
         public MainForm()
         {
             InitializeComponent();
+
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         #endregion

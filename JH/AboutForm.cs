@@ -15,6 +15,8 @@ namespace JH
         public AboutForm()
         {
             InitializeComponent();
+
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }
