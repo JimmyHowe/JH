@@ -16,11 +16,17 @@ namespace JH
 
         private TrayManager trayManager;
 
+        /// <summary>
+        /// Constructs the TrayApplicationInstance instance.
+        /// </summary>
         public TrayApplicationContext()
         {
             InitializeContext();
         }
 
+        /// <summary>
+        /// Initializes the Application Context.
+        /// </summary>
         private void InitializeContext()
         {
             trayManager = new TrayManager(this);
@@ -32,7 +38,7 @@ namespace JH
         #region Thread Worker
 
         /// <summary>
-        /// Runs the work in a seperate thread
+        /// Runs the work in a seperate thread.
         /// </summary>
         public void WorkerThread()
         {

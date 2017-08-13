@@ -8,13 +8,30 @@ using System.Windows.Forms;
 
 namespace JH
 {
+    /// <summary>
+    /// Manages the Tray Object
+    /// </summary>
     class TrayManager
     {
+        /// <summary>
+        /// Application Context
+        /// </summary>
         TrayApplicationContext context;
 
+        /// <summary>
+        /// Active Icon
+        /// </summary>
         Icon activeIcon;
+        
+        /// <summary>
+        /// Error Icon
+        /// </summary>
         Icon errorIcon;
 
+        /// <summary>
+        /// Constructs a new TrayManager instance.
+        /// </summary>
+        /// <param name="context">The TrayApplicationContext instance</param>
         public TrayManager(TrayApplicationContext context)
         {
             activeIcon = new Icon("icons\\active.ico");
@@ -25,6 +42,9 @@ namespace JH
             BuildSystemTray();
         }
 
+        /// <summary>
+        /// Builds the nitification tray object.
+        /// </summary>
         private void BuildSystemTray()
         {
             context.notifyIcon = new NotifyIcon();
@@ -33,6 +53,10 @@ namespace JH
             context.notifyIcon.ContextMenu = getContextMenu();
         }
 
+        /// <summary>
+        /// Builds the context menu.
+        /// </summary>
+        /// <returns></returns>
         private ContextMenu getContextMenu()
         {
             ContextMenu contextMenu = new ContextMenu();
@@ -49,6 +73,11 @@ namespace JH
             return contextMenu;
         }
 
+        /// <summary>
+        /// Fires when the about menu item is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AboutMenuItem_Click(object sender, EventArgs e)
         {
             if( context.aboutForm == null)
@@ -59,6 +88,11 @@ namespace JH
             context.aboutForm.Show();
         }
 
+        /// <summary>
+        /// Fires when the quit menu item is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void QuitMenuItem_Click(object sender, EventArgs e)
         {
             // Abort Thread
