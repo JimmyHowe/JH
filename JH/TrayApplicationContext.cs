@@ -12,6 +12,7 @@ namespace JH
         public NotifyIcon notifyIcon;
 
         public MainForm mainForm;
+
         public AboutForm aboutForm;
 
         public Thread workerThread;

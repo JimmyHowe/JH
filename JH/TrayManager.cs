@@ -53,11 +53,17 @@ namespace JH
             context.notifyIcon.ContextMenu = getContextMenu();
         }
 
+        /// <summary>
+        /// Shows the active icon in the system tray
+        /// </summary>
         public void showActiveIcon()
         {
             context.notifyIcon.Icon = activeIcon;
         }
 
+        /// <summary>
+        /// Shows the error icon in the system tray
+        /// </summary>
         public void showErrorIcon()
         {
             context.notifyIcon.Icon = errorIcon;
