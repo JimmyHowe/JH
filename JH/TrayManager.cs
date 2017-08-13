@@ -42,16 +42,7 @@ namespace JH
             BuildSystemTray();
         }
 
-        /// <summary>
-        /// Builds the nitification tray object.
-        /// </summary>
-        private void BuildSystemTray()
-        {
-            context.notifyIcon = new NotifyIcon();
-            context.notifyIcon.Icon = activeIcon;
-            context.notifyIcon.Visible = true;
-            context.notifyIcon.ContextMenu = getContextMenu();
-        }
+        #region Icon States
 
         /// <summary>
         /// Shows the active icon in the system tray
@@ -67,6 +58,22 @@ namespace JH
         public void showErrorIcon()
         {
             context.notifyIcon.Icon = errorIcon;
+        }
+
+        #endregion
+
+        #region System Tray Stuff
+
+        /// <summary>
+        /// Builds the nitification tray object.
+        /// </summary>
+        private void BuildSystemTray()
+        {
+            context.notifyIcon = new NotifyIcon();
+            context.notifyIcon.Icon = activeIcon;
+            context.notifyIcon.Visible = true;
+            context.notifyIcon.ContextMenu = getContextMenu();
+            context.notifyIcon.Click += NotifyIcon_Click;
         }
 
         /// <summary>
@@ -87,6 +94,25 @@ namespace JH
             contextMenu.MenuItems.Add(quitMenuItem);
 
             return contextMenu;
+        }
+
+        #endregion
+
+        #region Events
+
+        /// <summary>
+        /// Fires when the notify icon is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NotifyIcon_Click(object sender, EventArgs e)
+        {
+            if (context.mainForm == null)
+            {
+                context.mainForm = new MainForm();
+            }
+
+            context.mainForm.Show();
         }
 
         /// <summary>
@@ -120,5 +146,7 @@ namespace JH
             // Close Window
             Application.Exit();
         }
+
+        #endregion
     }
 }
