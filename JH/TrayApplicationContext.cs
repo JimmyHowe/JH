@@ -53,7 +53,7 @@ namespace JH
                     Thread.Sleep(20000);
                 }
             }
-            catch (ThreadAbortException e)
+            catch (ThreadAbortException)
             {
                 throw;
             }
