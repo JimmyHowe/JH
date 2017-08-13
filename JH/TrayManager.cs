@@ -53,6 +53,16 @@ namespace JH
             context.notifyIcon.ContextMenu = getContextMenu();
         }
 
+        public void showActiveIcon()
+        {
+            context.notifyIcon.Icon = activeIcon;
+        }
+
+        public void showErrorIcon()
+        {
+            context.notifyIcon.Icon = errorIcon;
+        }
+
         /// <summary>
         /// Builds the context menu.
         /// </summary>
