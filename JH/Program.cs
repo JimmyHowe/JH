@@ -19,7 +19,7 @@ namespace JH
 
             try
             {
-                var applicationContext = new CustomApplicationContext();
+                var applicationContext = new TrayApplicationContext();
                 Application.Run(applicationContext);
             }
             catch (Exception ex)

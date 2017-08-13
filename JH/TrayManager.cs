@@ -10,12 +10,12 @@ namespace JH
 {
     class TrayManager
     {
-        CustomApplicationContext context;
+        TrayApplicationContext context;
 
         Icon activeIcon;
         Icon errorIcon;
 
-        public TrayManager(CustomApplicationContext context)
+        public TrayManager(TrayApplicationContext context)
         {
             activeIcon = new Icon("icons\\active.ico");
             errorIcon = new Icon("icons\\error.ico");
